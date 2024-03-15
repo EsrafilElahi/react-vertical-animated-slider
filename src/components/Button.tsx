@@ -1,17 +1,20 @@
-import React, { useCallback } from "react";
 import "../index.css";
 
-export const Button = () => {
-  const onClick = useCallback(() => {
-    console.log("Vite + React + TypeScript + Tailwind = ❤️");
-  }, []);
+type ButtonClickFunction = (
+  event?: React.MouseEvent<HTMLButtonElement>
+) => void;
 
+interface Props {
+  onClick?: ButtonClickFunction; // Optional with question mark
+  children?: React.ReactNode;
+}
+
+export const Button = (props: Props) => {
   return (
-    <button
-      onClick={onClick}
-      className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded`}
-    >
-      Vite is better than Webpack
-    </button>
+    <>
+      <button onClick={props.onClick} {...props}>
+        {props.children}
+      </button>
+    </>
   );
 };
