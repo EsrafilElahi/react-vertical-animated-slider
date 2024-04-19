@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState } from "react";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
-import styles from "../VerticalCarousel.module.css";
+import styles from "../VerticalAnimatedCarousel.module.css";
 
 interface Props {
   data: unknown;
@@ -12,7 +12,7 @@ interface Props {
   startFromRight?: boolean;
 }
 
-const VerticalCarousel: React.FC<Props> = (props) => {
+const VerticalAnimatedCarousel: React.FC<Props> = (props) => {
   const {
     data,
     containerClassName = "",
@@ -76,4 +76,4 @@ const VerticalCarousel: React.FC<Props> = (props) => {
   );
 };
 
-export default VerticalCarousel;
+export default VerticalAnimatedCarousel;

@@ -1,1 +1,1 @@
-export { Button } from "./src/components/Button";
+export { default as VerticalAnimatedCarousel } from "./src/components/VerticalAnimatedCarousel";

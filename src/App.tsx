@@ -1,9 +1,13 @@
-import { Button as AButton } from "esrafil-btn-component";
-import { Button } from "./components/Button";
-import VerticalCarousel from "./components/VerticalCarousel";
+import VerticalAnimatedCarousel from "./components/VerticalAnimatedCarousel";
 import VerticalCarouselItem from "./components/VerticalCarouselItem";
 
-function App() {
+interface Props {
+  data?: unknown;
+}
+
+function App(props: Props) {
+  // const { data } = props;
+
   const data = [
     {
       id: 1,
@@ -38,7 +42,7 @@ function App() {
   return (
     <div className="w-full h-full">
       <div className="w-[30rem] mx-auto">
-        <VerticalCarousel data={data} CardItem={VerticalCarouselItem} />
+        <VerticalAnimatedCarousel data={data} CardItem={VerticalCarouselItem} />
       </div>
     </div>
   );

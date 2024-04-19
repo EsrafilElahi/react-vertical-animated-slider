@@ -1,4 +1,4 @@
-import styles from "../VerticalCarousel.module.css";
+import styles from "../VerticalAnimatedCarousel.module.css";
 import { BsChatLeft } from "react-icons/bs";
 
 const VerticalCarouselItem = (props) => {
