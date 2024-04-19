@@ -34,16 +34,14 @@ const VerticalAnimatedCarousel: React.FC<Props> = (props) => {
     : [...(Array.isArray(data) ? data : [])]?.reverse();
 
   return (
-    <div
-      className={`flex h-[8.5em] justify-between items-center gap-4 ${containerClassName}`}
-    >
+    <div className={`${styles.container} ${containerClassName}`}>
       <span
-        className={`text-gray w-5 h-5 cursor-pointer text-xl ${
-          active > 0 ? "visible" : "invisible"
+        className={`${styles.iconsLeft} ${
+          active > 0 ? styles.visible : styles.invisible
         }`}
         onClick={() => setActive((i) => i - 1)}
       >
-        <LeftArrowIcon className="w-full h-full" />
+        <LeftArrowIcon className={styles.arrowIcons} />
       </span>
 
       <div className={styles.carousel}>
@@ -73,12 +71,12 @@ const VerticalAnimatedCarousel: React.FC<Props> = (props) => {
       </div>
       <span
         style={{ transform: "" }}
-        className={`text-gray w-5 h-5 cursor-pointer text-xl ${
-          active < count - 1 ? "visible" : "invisible"
+        className={`${styles.iconsRight} ${
+          active < count - 1 ? styles.visible : styles.invisible
         }`}
         onClick={() => setActive((i) => i + 1)}
       >
-        <RightArrowIcon className="w-full h-full" />
+        <RightArrowIcon className={styles.arrowIcons} />
       </span>
     </div>
   );
