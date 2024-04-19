@@ -3,18 +3,13 @@ import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import styles from "../VerticalCarousel.module.css";
 import VerticalCarouselItem from "./VerticalCarouselItem";
 
-const MAX_VISIBILITY = 3;
+const MAX_VISIBILITY = 2;
 
 const VerticalCarousel = (props) => {
   const { activeRequestsList } = props;
 
   const count = activeRequestsList?.length;
   const [active, setActive] = useState(count - 1);
-
-  console.log(
-    "activeRequestsList inside verticalCarousel :",
-    activeRequestsList
-  );
 
   return (
     <div className="flex h-[8.5em] justify-between items-center gap-4">
@@ -35,7 +30,7 @@ const VerticalCarousel = (props) => {
               style={
                 {
                   "--active": i === active ? 1 : 0,
-                  "--offset": (active - i) / 4,
+                  "--offset": (active - i) / 1.3,
                   "--direction": Math.sign(active - i),
                   "--absOffset": Math.abs(active - i) / 2,
                   pointerEvents: active === i ? "auto" : "none",
