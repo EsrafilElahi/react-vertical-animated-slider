@@ -1,8 +1,18 @@
-import { useState } from "react";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import React, { useState } from "react";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import styles from "../VerticalCarousel.module.css";
 
-const VerticalCarousel = (props) => {
+interface Props {
+  data: unknown;
+  CardItem: React.ComponentType<{ hasCard: number; card: unknown }>;
+  containerClassName?: string;
+  behindCardSpace?: number;
+  maxBehindCardVisibility?: number;
+  startFromRight?: boolean;
+}
+
+const VerticalCarousel: React.FC<Props> = (props) => {
   const {
     data,
     containerClassName = "",
@@ -12,10 +22,14 @@ const VerticalCarousel = (props) => {
     startFromRight = true,
   } = props;
 
-  const count = data?.length;
-  const [active, setActive] = useState(startFromRight ? 0 : count - 1);
+  const count: number = Array.isArray(data) ? data.length : 0;
+  const [active, setActive] = useState<number>(startFromRight ? 0 : count - 1);
 
-  const sortedData = startFromRight ? data : [...data]?.reverse();
+  const sortedData: unknown[] = startFromRight
+    ? Array.isArray(data)
+      ? data
+      : []
+    : [...(Array.isArray(data) ? data : [])]?.reverse();
 
   return (
     <div
@@ -28,7 +42,7 @@ const VerticalCarousel = (props) => {
         onClick={() => setActive((i) => i - 1)}
       />
       <div className={styles.carousel}>
-        {sortedData?.map((card, i) => (
+        {sortedData?.map((card: any, i) => (
           <div
             key={card?.id || i}
             className={styles.cardContainer}
@@ -45,10 +59,10 @@ const VerticalCarousel = (props) => {
                   Math.abs(active - i) > maxBehindCardVisibility
                     ? "none"
                     : "block",
-              } as unknown
+              } as React.CSSProperties
             }
           >
-            <CardItem hasCard={count} id={card.id} card={card} />
+            <CardItem hasCard={count} card={card} />
           </div>
         ))}
       </div>
