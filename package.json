@@ -35,8 +35,8 @@
     "preview": "vite preview"
   },
   "peerDependencies": {
-    "react": ">=16.9.0",
-    "react-dom": ">=16.9.0"
+    "react": "^16.0.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.0.0 || ^17.0.0 || ^18.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.11.28",
@@ -53,7 +53,10 @@
     "tailwindcss": "^3.4.3",
     "typescript": "^5.2.2",
     "vite": "^5.1.4",
-    "vite-plugin-dts": "^3.7.3"
+    "vite-plugin-dts": "^3.7.3",
+    "react": "^16.0.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.0.0 || ^17.0.0 || ^18.0.0",
+    "react-scripts": "5.0.1"
   },
   "license": "MIT",
   "homepage": "https://github.com/EsrafilElahi/react-vertical-animated-slider",

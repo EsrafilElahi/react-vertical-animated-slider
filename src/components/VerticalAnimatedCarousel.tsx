@@ -2,11 +2,11 @@
 import React, { useState } from "react";
 import RightArrowIcon from "./RightArrowIcon";
 import LeftArrowIcon from "./LeftArrowIcon";
-import "../carousel.css";
+import styles from "../VerticalAnimatedCarousel.module.css";
 
 interface Props {
   data: unknown;
-  CardItem: React.ComponentType<{ hasCard: number; card: unknown }>;
+  CardItem: React.ComponentType<{ card: unknown }>;
   containerClassName?: string;
   behindCardSpace?: number;
   maxBehindCardVisibility?: number;
@@ -45,11 +45,11 @@ const VerticalAnimatedCarousel: React.FC<Props> = (props) => {
         <LeftArrowIcon className="w-full h-full" />
       </span>
 
-      <div className={"carousel"}>
+      <div className={styles.carousel}>
         {sortedData?.map((card: any, i) => (
           <div
             key={card?.id || i}
-            className={"cardContainer"}
+            className={styles.cardContainer}
             style={
               {
                 "--active": i === active ? 1 : 0,
@@ -66,7 +66,7 @@ const VerticalAnimatedCarousel: React.FC<Props> = (props) => {
               } as React.CSSProperties
             }
           >
-            <CardItem hasCard={count} card={card} />
+            <CardItem card={card} />
           </div>
         ))}
       </div>
