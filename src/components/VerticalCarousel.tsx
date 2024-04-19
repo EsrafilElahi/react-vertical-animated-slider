@@ -18,7 +18,7 @@ const VerticalCarousel = (props) => {
 
   return (
     <div className="flex h-[8.5em] justify-between items-center gap-4">
-      <AiOutlineRight
+      <AiOutlineLeft
         className={`text-gray w-6 h-6 cursor-pointer ${
           active > 0 ? "visible" : "invisible"
         }`}
@@ -49,7 +49,7 @@ const VerticalCarousel = (props) => {
             </div>
           ))}
       </div>
-      <AiOutlineLeft
+      <AiOutlineRight
         className={`text-gray w-6 h-6 cursor-pointer ${
           active < count - 1 ? "visible" : "invisible"
         }`}
