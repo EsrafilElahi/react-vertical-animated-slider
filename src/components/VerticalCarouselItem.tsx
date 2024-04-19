@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 // import { useRouter } from "next/router";
-import styles from "../../styles/VerticalCarousel.module.scss";
+import styles from "../VerticalCarousel.module.css";
 import { BsChatLeft } from "react-icons/bs";
 // import { useSelector } from "react-redux";
 

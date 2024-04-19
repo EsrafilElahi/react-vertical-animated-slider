@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { TiChevronLeftOutline, TiChevronRightOutline } from "react-icons/ti";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
-import styles from "../../styles/VerticalCarousel.module.scss";
+import styles from "../VerticalCarousel.module.css";
 import VerticalCarouselItem from "./VerticalCarouselItem";
 
 const MAX_VISIBILITY = 3;
