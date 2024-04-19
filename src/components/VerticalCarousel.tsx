@@ -3,7 +3,7 @@ import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import styles from "../VerticalCarousel.module.css";
 import VerticalCarouselItem from "./VerticalCarouselItem";
 
-const MAX_VISIBILITY = 2;
+const MAX_BEHIND_CARD_VISIBILITY = 2;
 
 const VerticalCarousel = (props) => {
   const { activeRequestsList } = props;
@@ -34,9 +34,14 @@ const VerticalCarousel = (props) => {
                   "--direction": Math.sign(active - i),
                   "--absOffset": Math.abs(active - i) / 2,
                   pointerEvents: active === i ? "auto" : "none",
-                  opacity: Math.abs(active - i) >= MAX_VISIBILITY ? "0" : "1",
+                  opacity:
+                    Math.abs(active - i) >= MAX_BEHIND_CARD_VISIBILITY
+                      ? "0"
+                      : "1",
                   display:
-                    Math.abs(active - i) > MAX_VISIBILITY ? "none" : "block",
+                    Math.abs(active - i) > MAX_BEHIND_CARD_VISIBILITY
+                      ? "none"
+                      : "block",
                 } as unknown
               }
             >
