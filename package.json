@@ -1,7 +1,7 @@
 {
   "name": "react-vertical-animated-slider",
   "private": false,
-  "version": "1.3.2",
+  "version": "1.3.3",
   "type": "module",
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
@@ -16,6 +16,15 @@
   "files": [
     "/dist"
   ],
+  "keywords": [
+    "react-component",
+    "react",
+    "slider",
+    "component",
+    "carousel",
+    "verticalCarousel",
+    "animatedCarousel"
+  ],
   "publishConfig": {
     "access": "public"
   },
@@ -25,9 +34,10 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+  "dependencies": {},
+  "peerDependencies": {
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0"
   },
   "devDependencies": {
     "@types/node": "^20.11.28",
@@ -45,5 +55,11 @@
     "typescript": "^5.2.2",
     "vite": "^5.1.4",
     "vite-plugin-dts": "^3.7.3"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/EsrafilElahi/react-vertical-animated-slider",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:EsrafilElahi/react-vertical-animated-slider.git"
   }
 }
