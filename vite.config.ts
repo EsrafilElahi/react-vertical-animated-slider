@@ -6,7 +6,7 @@ import path from "path";
 export default defineConfig({
   build: {
     lib: {
-      entry: path.resolve(__dirname, "index.ts"),
+      entry: path.resolve(__dirname, "src/lib/index.js"),
       name: "react-vertical-animated-slider",
       fileName: (format) => `index.${format}.js`,
     },
@@ -15,12 +15,11 @@ export default defineConfig({
       output: {
         globals: {
           react: "React",
-          "react-dom": "ReactDOM",
         },
       },
     },
-    sourcemap: true,
-    emptyOutDir: true,
+    // sourcemap: true,
+    // emptyOutDir: true,
   },
   plugins: [react(), dts()],
 });
