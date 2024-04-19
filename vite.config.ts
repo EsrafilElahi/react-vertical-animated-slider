@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import dts from "vite-plugin-dts";
+import { libInjectCss } from "vite-plugin-lib-inject-css";
 import path from "path";
 
 export default defineConfig({
@@ -15,11 +16,12 @@ export default defineConfig({
       output: {
         globals: {
           react: "React",
+          "react-dom": "ReactDOM",
         },
       },
     },
     sourcemap: true,
     emptyOutDir: true,
   },
-  plugins: [react(), dts()],
+  plugins: [react(), dts(), libInjectCss()],
 });
