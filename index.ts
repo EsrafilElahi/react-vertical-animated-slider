@@ -1,1 +1,1 @@
-export { default } from "./src/components/VerticalAnimatedCarousel";
+export default "./src/components/VerticalAnimatedCarousel";
