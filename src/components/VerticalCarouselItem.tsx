@@ -1,5 +1,5 @@
 import styles from "../VerticalAnimatedCarousel.module.css";
-import { BsChatLeft } from "react-icons/bs";
+// import { BsChatLeft } from "react-icons/bs";
 
 const VerticalCarouselItem = (props) => {
   const { card, hasCard } = props;
@@ -31,7 +31,7 @@ const VerticalCarouselItem = (props) => {
           hasCard ? activeArrowClassName : ""
         }`}
       >
-        <BsChatLeft className="w-6 h-6 mt-[1px] text-white" />
+        {/* <BsChatLeft className="w-6 h-6 mt-[1px] text-white" /> */}
       </div>
     </div>
   );

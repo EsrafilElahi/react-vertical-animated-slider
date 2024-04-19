@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState } from "react";
-import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import styles from "../VerticalAnimatedCarousel.module.css";
+import RightArrowIcon from "./RightArrowIcon";
+import LeftArrowIcon from "./LeftArrowIcon";
 
 interface Props {
   data: unknown;
@@ -35,12 +36,15 @@ const VerticalAnimatedCarousel: React.FC<Props> = (props) => {
     <div
       className={`flex h-[8.5em] justify-between items-center gap-4 ${containerClassName}`}
     >
-      <AiOutlineLeft
-        className={`text-gray w-6 h-6 cursor-pointer ${
+      <span
+        className={`text-gray w-5 h-5 cursor-pointer text-xl ${
           active > 0 ? "visible" : "invisible"
         }`}
         onClick={() => setActive((i) => i - 1)}
-      />
+      >
+        <LeftArrowIcon className="w-full h-full" />
+      </span>
+
       <div className={styles.carousel}>
         {sortedData?.map((card: any, i) => (
           <div
@@ -66,12 +70,15 @@ const VerticalAnimatedCarousel: React.FC<Props> = (props) => {
           </div>
         ))}
       </div>
-      <AiOutlineRight
-        className={`text-gray w-6 h-6 cursor-pointer ${
+      <span
+        style={{ transform: "" }}
+        className={`text-gray w-5 h-5 cursor-pointer text-xl ${
           active < count - 1 ? "visible" : "invisible"
         }`}
         onClick={() => setActive((i) => i + 1)}
-      />
+      >
+        <RightArrowIcon className="w-full h-full" />
+      </span>
     </div>
   );
 };
