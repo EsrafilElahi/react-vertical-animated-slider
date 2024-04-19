@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "../VerticalAnimatedCarousel.module.css";
-// import "dist/styles.css";
 
 interface Props {
   card: unknown;
