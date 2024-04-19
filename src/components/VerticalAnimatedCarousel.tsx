@@ -4,6 +4,7 @@ import RightArrowIcon from "./RightArrowIcon";
 import LeftArrowIcon from "./LeftArrowIcon";
 import VerticalCarouselItem from "./VerticalCarouselItem";
 import styles from "../VerticalAnimatedCarousel.module.css";
+import "dist/styles.css";
 
 interface Props {
   data: unknown;
