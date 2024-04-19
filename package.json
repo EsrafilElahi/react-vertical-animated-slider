@@ -1,7 +1,7 @@
 {
   "name": "react-vertical-animated-slider",
   "private": false,
-  "version": "1.5.30",
+  "version": "1.5.31",
   "type": "module",
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
