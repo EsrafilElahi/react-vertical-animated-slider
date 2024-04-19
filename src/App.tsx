@@ -37,16 +37,8 @@ function App() {
 
   return (
     <div className="w-full h-full">
-      <div className="w-full h-full flex justify-center flex-col gap-10">
-        <div className="w-[30rem] mx-auto">
-          <VerticalCarousel data={data} CardItem={VerticalCarouselItem} />
-        </div>
-        <div>
-          <Button onClick={() => console.log("clicked me!")}>click me</Button>
-          <AButton onClick={() => console.log("AButton clicked me!")}>
-            click me
-          </AButton>
-        </div>
+      <div className="w-[30rem] mx-auto">
+        <VerticalCarousel data={data} CardItem={VerticalCarouselItem} />
       </div>
     </div>
   );
