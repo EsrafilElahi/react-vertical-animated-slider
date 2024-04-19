@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import RightArrowIcon from "./RightArrowIcon";
 import LeftArrowIcon from "./LeftArrowIcon";
-// import "/dist/style.css";
+import "/dist/style.css";
 import styles from "../VerticalAnimatedCarousel.module.css";
 
 interface Props {
