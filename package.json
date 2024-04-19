@@ -6,6 +6,15 @@
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/ui-react.es.js",
+      "require": "./dist/ui-react.umd.js",
+      "styles": "./dist/style.css"
+    }
+  },
+  "./css": "./dist/style.css",
   "files": [
     "dist",
     "README.md"
