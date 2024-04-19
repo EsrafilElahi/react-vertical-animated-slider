@@ -1,6 +1,5 @@
 import VerticalAnimatedCarousel from "./components/VerticalAnimatedCarousel";
 import VerticalCarouselItem from "./components/VerticalCarouselItem";
-// import { VerticalAnimatedCarousel } from "react-vertical-animated-slider";
 
 function App() {
   const data = [
