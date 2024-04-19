@@ -2,7 +2,8 @@
 import React, { useState } from "react";
 import RightArrowIcon from "./RightArrowIcon";
 import LeftArrowIcon from "./LeftArrowIcon";
-import "/dist/style.css";
+// import "/dist/style.css";
+import styles from "../VerticalAnimateddCarousel.module.css";
 
 interface Props {
   data: unknown;
@@ -45,11 +46,11 @@ const VerticalAnimatedCarousel: React.FC<Props> = (props) => {
         <LeftArrowIcon className="w-full h-full" />
       </span>
 
-      <div className={"carousel"}>
+      <div className={styles.carousel}>
         {sortedData?.map((card: any, i) => (
           <div
             key={card?.id || i}
-            className={"cardContainer"}
+            className={styles.cardContainer}
             style={
               {
                 "--active": i === active ? 1 : 0,
