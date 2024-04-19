@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import RightArrowIcon from "./RightArrowIcon";
 import LeftArrowIcon from "./LeftArrowIcon";
-import "/dist/style.css";
+import VerticalCarouselItem from "./VerticalCarouselItem";
 import styles from "../VerticalAnimatedCarousel.module.css";
 
 interface Props {
@@ -65,12 +65,13 @@ const VerticalAnimatedCarousel: React.FC<Props> = (props) => {
               } as React.CSSProperties
             }
           >
-            <CardItem card={card} />
+            <VerticalCarouselItem card={card}>
+              {(card: any) => <CardItem card={card} />}
+            </VerticalCarouselItem>{" "}
           </div>
         ))}
       </div>
       <span
-        style={{ transform: "" }}
         className={`${styles.iconsRight} ${
           active < count - 1 ? styles.visible : styles.invisible
         }`}
