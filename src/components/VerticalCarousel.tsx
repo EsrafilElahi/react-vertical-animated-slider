@@ -9,10 +9,13 @@ const VerticalCarousel = (props) => {
     behindCardSpace = 1.4,
     maxBehindCardVisibility = 2,
     CardItem,
+    startFromRight = true,
   } = props;
 
   const count = data?.length;
-  const [active, setActive] = useState(count - 1);
+  const [active, setActive] = useState(startFromRight ? 0 : count - 1);
+
+  const sortedData = startFromRight ? data : [...data]?.reverse();
 
   return (
     <div
@@ -25,32 +28,29 @@ const VerticalCarousel = (props) => {
         onClick={() => setActive((i) => i - 1)}
       />
       <div className={styles.carousel}>
-        {data
-          ?.slice(0)
-          ?.reverse()
-          ?.map((card, i) => (
-            <div
-              key={i}
-              className={styles.cardContainer}
-              style={
-                {
-                  "--active": i === active ? 1 : 0,
-                  "--offset": (active - i) / behindCardSpace,
-                  "--direction": Math.sign(active - i),
-                  "--absOffset": Math.abs(active - i) / 2,
-                  pointerEvents: active === i ? "auto" : "none",
-                  opacity:
-                    Math.abs(active - i) >= maxBehindCardVisibility ? "0" : "1",
-                  display:
-                    Math.abs(active - i) > maxBehindCardVisibility
-                      ? "none"
-                      : "block",
-                } as unknown
-              }
-            >
-              <CardItem hasCard={count} id={card.id} card={card} />
-            </div>
-          ))}
+        {sortedData?.map((card, i) => (
+          <div
+            key={card?.id || i}
+            className={styles.cardContainer}
+            style={
+              {
+                "--active": i === active ? 1 : 0,
+                "--offset": (active - i) / behindCardSpace,
+                "--direction": Math.sign(active - i),
+                "--absOffset": Math.abs(active - i) / 2,
+                pointerEvents: active === i ? "auto" : "none",
+                opacity:
+                  Math.abs(active - i) >= maxBehindCardVisibility ? "0" : "1",
+                display:
+                  Math.abs(active - i) > maxBehindCardVisibility
+                    ? "none"
+                    : "block",
+              } as unknown
+            }
+          >
+            <CardItem hasCard={count} id={card.id} card={card} />
+          </div>
+        ))}
       </div>
       <AiOutlineRight
         className={`text-gray w-6 h-6 cursor-pointer ${
