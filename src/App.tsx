@@ -1,6 +1,7 @@
 import { Button as AButton } from "esrafil-btn-component";
 import { Button } from "./components/Button";
 import VerticalCarousel from "./components/VerticalCarousel";
+import VerticalCarouselItem from "./components/VerticalCarouselItem";
 
 function App() {
   const data = [
@@ -38,7 +39,7 @@ function App() {
     <div className="w-full h-full">
       <div className="w-full h-full flex justify-center flex-col gap-10">
         <div className="w-[30rem] mx-auto">
-          <VerticalCarousel data={data} />
+          <VerticalCarousel data={data} CardItem={VerticalCarouselItem} />
         </div>
         <div>
           <Button onClick={() => console.log("clicked me!")}>click me</Button>
