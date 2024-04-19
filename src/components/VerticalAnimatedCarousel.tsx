@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import RightArrowIcon from "./RightArrowIcon";
 import LeftArrowIcon from "./LeftArrowIcon";
+import './index.css'
 
 interface Props {
   data: unknown;
