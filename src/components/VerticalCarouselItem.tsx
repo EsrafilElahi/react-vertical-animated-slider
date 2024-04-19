@@ -1,13 +1,10 @@
-import React, { useState, useEffect } from "react";
 import styles from "../VerticalCarousel.module.css";
 import { BsChatLeft } from "react-icons/bs";
 
 const VerticalCarouselItem = (props) => {
-  const { req, hasRequest } = props;
+  const { card, hasCard } = props;
 
-  console.log("req inside carousel item :", req);
-
-  const activeDot =
+  const activeArrowClassName =
     "before:content-[''] before:w-3 before:h-3 before:p-1 before:bg-red before:rounded-[50%] before:top-3 before:left-4 before:absolute";
 
   return (
@@ -24,14 +21,14 @@ const VerticalCarouselItem = (props) => {
         </div>
 
         <div className="flex flex-col justify-between items-start">
-          <span className="text-primary text-sm">{"department"}</span>
-          <span className="text-lg text-black">{"userName"}</span>
+          <span className="text-primary text-sm">{card?.id}</span>
+          <span className="text-lg text-black">{card?.name}</span>
         </div>
       </div>
 
       <div
         className={`flex justify-center items-center p-2 ml-2 bg-primary rounded-lg ${
-          hasRequest && activeDot
+          hasCard ? activeArrowClassName : ""
         }`}
       >
         <BsChatLeft className="w-6 h-6 mt-[1px] text-white" />

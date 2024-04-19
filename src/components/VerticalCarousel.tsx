@@ -6,9 +6,9 @@ import VerticalCarouselItem from "./VerticalCarouselItem";
 const MAX_BEHIND_CARD_VISIBILITY = 2;
 
 const VerticalCarousel = (props) => {
-  const { activeRequestsList } = props;
+  const { data } = props;
 
-  const count = activeRequestsList?.length;
+  const count = data?.length;
   const [active, setActive] = useState(count - 1);
 
   return (
@@ -20,17 +20,17 @@ const VerticalCarousel = (props) => {
         onClick={() => setActive((i) => i - 1)}
       />
       <div className={styles.carousel}>
-        {activeRequestsList
+        {data
           ?.slice(0)
           ?.reverse()
-          ?.map((req, i) => (
+          ?.map((card, i) => (
             <div
               key={i}
               className={styles.cardContainer}
               style={
                 {
                   "--active": i === active ? 1 : 0,
-                  "--offset": (active - i) / 1.3,
+                  "--offset": (active - i) / 1.4,
                   "--direction": Math.sign(active - i),
                   "--absOffset": Math.abs(active - i) / 2,
                   pointerEvents: active === i ? "auto" : "none",
@@ -45,7 +45,7 @@ const VerticalCarousel = (props) => {
                 } as unknown
               }
             >
-              <VerticalCarouselItem hasRequest={count} id={req.id} req={req} />
+              <VerticalCarouselItem hasCard={count} id={card.id} card={card} />
             </div>
           ))}
       </div>

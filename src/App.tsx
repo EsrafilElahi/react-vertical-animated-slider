@@ -38,7 +38,7 @@ function App() {
     <div className="w-full h-full">
       <div className="w-full h-full flex justify-center flex-col gap-10">
         <div className="w-[30rem] mx-auto">
-          <VerticalCarousel activeRequestsList={data} />
+          <VerticalCarousel data={data} />
         </div>
         <div>
           <Button onClick={() => console.log("clicked me!")}>click me</Button>
