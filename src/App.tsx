@@ -1,11 +1,7 @@
 import VerticalAnimatedCarousel from "./components/VerticalAnimatedCarousel";
 import VerticalCarouselItem from "./components/VerticalCarouselItem";
 
-interface Props {
-  data?: unknown;
-}
-
-function App(props: Props) {
+function App() {
   // const { data } = props;
 
   const data = [
