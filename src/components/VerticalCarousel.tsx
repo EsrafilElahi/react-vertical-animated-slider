@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { TiChevronLeftOutline, TiChevronRightOutline } from "react-icons/ti";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import styles from "../VerticalCarousel.module.css";
 import VerticalCarouselItem from "./VerticalCarouselItem";
