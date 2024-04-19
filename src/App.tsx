@@ -1,5 +1,7 @@
-import VerticalAnimatedCarousel from "./components/VerticalAnimatedCarousel";
+// import VerticalAnimatedCarousel from "./components/VerticalAnimatedCarousel";
 import VerticalCarouselItem from "./components/VerticalCarouselItem";
+
+// import { VerticalAnimatedCarousel } from "react-vertical-animated-slider";
 
 function App() {
   // const { data } = props;
@@ -38,7 +40,7 @@ function App() {
   return (
     <div className="w-full h-full">
       <div className="w-[30rem] mx-auto">
-        <VerticalAnimatedCarousel data={data} CardItem={VerticalCarouselItem} />
+        {/* <VerticalAnimatedCarousel data={data} CardItem={VerticalCarouselItem} /> */}
       </div>
     </div>
   );

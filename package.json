@@ -1,7 +1,7 @@
 {
   "name": "react-vertical-animated-slider",
   "private": false,
-  "version": "1.1.0",
+  "version": "1.1.2",
   "type": "module",
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
@@ -26,7 +26,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "esrafil-btn-component": "^1.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.1.0"
