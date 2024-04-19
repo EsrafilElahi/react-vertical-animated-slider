@@ -3,7 +3,6 @@ import { TiChevronLeftOutline, TiChevronRightOutline } from 'react-icons/ti';
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
 import styles from '../../styles/VerticalCarousel.module.scss';
 import VerticalCarouselItem from './VerticalCarouselItem';
-import { useSelector } from 'react-redux';
 
 const MAX_VISIBILITY = 3;
 

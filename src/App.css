@@ -1,42 +1,60 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+:root {
+  --color-purple: #8b5cf6;
+  --color-pink: #ec4899;
+  --color-gray: #9ca3af;
+  --color-black: #1f2937;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.carousel {
+  width: 100%;
+  height: 5em;
+  perspective: 300px;
+  transform-style: preserve-3d;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.cardContainer {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.07);
+  transform: rotateX(calc(var(--offset) * 20deg))
+    scaleX(calc(1 + var(--absOffset) * 0.8))
+    translateZ(calc(var(--absOffset) * -30rem));
+  filter: blur(calc(var(--absOffset) * 0.1rem));
+  transition: all 0.3s ease-out;
 }
 
 .card {
-  padding: 2em;
+  width: 100%;
+  height: 100%;
+  padding: 0.75rem;
+  background-color: rgb(250, 250, 250);
+  border-radius: 0.5rem;
+  transition: all 0.3s ease-out;
 }
 
-.read-the-docs {
-  color: #888;
+.nav {
+  color: white;
+  font-size: 5rem;
+  /* position: absolute; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  z-index: 2;
+  cursor: pointer;
+  user-select: none;
+  background: unset;
+  border: unset;
+}
+
+.nav.left {
+  left: 0;
+  /* transform: translateX(-100%) translatey(-50%); */
+}
+
+.nav.right {
+  right: 0;
+  /* transform: translateX(100%) translatey(-50%); */
 }
