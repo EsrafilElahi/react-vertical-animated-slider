@@ -32,16 +32,18 @@ const VerticalCarousel = (props) => {
             <div
               key={i}
               className={styles.cardContainer}
-              style={{
-                "--active": i === active ? 1 : 0,
-                "--offset": (active - i) / 4,
-                "--direction": Math.sign(active - i),
-                "--absOffset": Math.abs(active - i) / 2,
-                pointerEvents: active === i ? "auto" : "none",
-                opacity: Math.abs(active - i) >= MAX_VISIBILITY ? "0" : "1",
-                display:
-                  Math.abs(active - i) > MAX_VISIBILITY ? "none" : "block",
-              }}
+              style={
+                {
+                  "--active": i === active ? 1 : 0,
+                  "--offset": (active - i) / 4,
+                  "--direction": Math.sign(active - i),
+                  "--absOffset": Math.abs(active - i) / 2,
+                  pointerEvents: active === i ? "auto" : "none",
+                  opacity: Math.abs(active - i) >= MAX_VISIBILITY ? "0" : "1",
+                  display:
+                    Math.abs(active - i) > MAX_VISIBILITY ? "none" : "block",
+                } as unknown
+              }
             >
               <VerticalCarouselItem hasRequest={count} id={req.id} req={req} />
             </div>
