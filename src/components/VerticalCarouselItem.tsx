@@ -3,13 +3,18 @@ import styles from "../VerticalAnimatedCarousel.module.css";
 
 interface Props {
   card: unknown;
+  cardItemClassName?: string;
   children: (card: unknown) => React.ReactNode;
 }
 
 const VerticalCarouselItem = (props: Props) => {
-  const { card, children } = props;
+  const { card, children, cardItemClassName } = props;
 
-  return <div className={`${styles.card}`}>{children(card)}</div>;
+  return (
+    <div className={`${styles.card} ${cardItemClassName}`}>
+      {children(card)}
+    </div>
+  );
 };
 
 export default VerticalCarouselItem;
