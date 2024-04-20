@@ -8,8 +8,11 @@ import styles from "../VerticalAnimatedCarousel.module.css";
 interface Props {
   data: unknown;
   CardItem: React.ComponentType<{ card: unknown }>;
-  containerClassName?: string | React.CSSProperties;
-  carouselClassName?: string | React.CSSProperties;
+  containerClassName?: string;
+  containerStyle?: React.CSSProperties;
+
+  carouselClassName?: string;
+  carouselStyle?: React.CSSProperties;
 
   cardItemClassName?: string;
   cardItemStyle?: React.CSSProperties;
@@ -23,9 +26,14 @@ const VerticalAnimatedCarousel: React.FC<Props> = (props) => {
   const {
     data,
     containerClassName = "",
+    containerStyle = {},
+
     carouselClassName = "",
+    carouselStyle = {},
+
     cardItemClassName = "",
     cardItemStyle = {},
+
     behindCardSpace = 1.4,
     maxBehindCardVisibility = 2,
     CardItem,
@@ -42,7 +50,10 @@ const VerticalAnimatedCarousel: React.FC<Props> = (props) => {
     : [...(Array.isArray(data) ? data : [])]?.reverse();
 
   return (
-    <div className={`${styles.container} ${containerClassName}`}>
+    <div
+      className={`${styles.container} ${containerClassName}`}
+      style={containerStyle}
+    >
       <span
         className={`${styles.iconsLeft} ${
           active > 0 ? styles.visible : styles.invisible
@@ -52,7 +63,10 @@ const VerticalAnimatedCarousel: React.FC<Props> = (props) => {
         <LeftArrowIcon className={styles.arrowIcons} />
       </span>
 
-      <div className={`${styles.carousel} ${carouselClassName}`}>
+      <div
+        className={`${styles.carousel} ${carouselClassName}`}
+        style={carouselStyle}
+      >
         {sortedData?.map((card: any, i) => (
           <div
             key={card?.id || i}

@@ -59,7 +59,7 @@ function App() {
           data={data}
           CardItem={CardItem}
           cardItemStyle={{ height: "10rem" }}
-          // cardItemClassName="w-10"
+          // cardItemClassName="w-30"
         />
       </div>
     </div>

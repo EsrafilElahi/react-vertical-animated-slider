@@ -13,8 +13,8 @@ const VerticalCarouselItem = (props: Props) => {
 
   return (
     <div
-      className={`${styles.card} ${cardItemClassName as string}`}
-      style={cardItemStyle as React.CSSProperties}
+      className={`${styles.card} ${cardItemClassName}`}
+      style={cardItemStyle}
     >
       {children(card)}
     </div>
