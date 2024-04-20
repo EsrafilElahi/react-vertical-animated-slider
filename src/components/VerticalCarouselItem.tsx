@@ -3,7 +3,7 @@ import styles from "../VerticalAnimatedCarousel.module.css";
 
 interface Props {
   card: unknown;
-  cardItemClassName?: string;
+  cardItemClassName?: string | React.CSSProperties;
   children: (card: unknown) => React.ReactNode;
 }
 

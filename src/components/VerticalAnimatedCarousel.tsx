@@ -8,9 +8,9 @@ import styles from "../VerticalAnimatedCarousel.module.css";
 interface Props {
   data: unknown;
   CardItem: React.ComponentType<{ card: unknown }>;
-  containerClassName?: string;
-  carouselClassName?: string;
-  cardItemClassName?: string;
+  containerClassName?: string | React.CSSProperties;
+  carouselClassName?: string | React.CSSProperties;
+  cardItemClassName?: string | React.CSSProperties;
   behindCardSpace?: number;
   maxBehindCardVisibility?: number;
   startFromRight?: boolean;
@@ -69,7 +69,10 @@ const VerticalAnimatedCarousel: React.FC<Props> = (props) => {
               } as React.CSSProperties
             }
           >
-            <VerticalCarouselItem card={card} cardItemClassName={cardItemClassName}>
+            <VerticalCarouselItem
+              card={card}
+              cardItemClassName={cardItemClassName}
+            >
               {(card: any) => <CardItem card={card} />}
             </VerticalCarouselItem>
           </div>
