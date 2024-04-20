@@ -9,6 +9,7 @@ interface Props {
   data: unknown;
   CardItem: React.ComponentType<{ card: unknown }>;
   containerClassName?: string;
+  carouselClassName?: string;
   behindCardSpace?: number;
   maxBehindCardVisibility?: number;
   startFromRight?: boolean;
@@ -18,6 +19,7 @@ const VerticalAnimatedCarousel: React.FC<Props> = (props) => {
   const {
     data,
     containerClassName = "",
+    carouselClassName = "",
     behindCardSpace = 1.4,
     maxBehindCardVisibility = 2,
     CardItem,
@@ -44,7 +46,7 @@ const VerticalAnimatedCarousel: React.FC<Props> = (props) => {
         <LeftArrowIcon className={styles.arrowIcons} />
       </span>
 
-      <div className={styles.carousel}>
+      <div className={`${styles.carousel} ${carouselClassName}`}>
         {sortedData?.map((card: any, i) => (
           <div
             key={card?.id || i}
@@ -67,7 +69,7 @@ const VerticalAnimatedCarousel: React.FC<Props> = (props) => {
           >
             <VerticalCarouselItem card={card}>
               {(card: any) => <CardItem card={card} />}
-            </VerticalCarouselItem>{" "}
+            </VerticalCarouselItem>
           </div>
         ))}
       </div>
