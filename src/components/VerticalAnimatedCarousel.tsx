@@ -97,6 +97,7 @@ const VerticalAnimatedCarousel: React.FC<Props> = (props) => {
           </div>
         ))}
       </div>
+      
       <span
         className={`${styles.iconsRight} ${
           active < count - 1 ? styles.visible : styles.invisible
