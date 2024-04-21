@@ -4,6 +4,10 @@
 React Vertical Animated Slider is a versatile and user-friendly ReactJS component designed to enhance the visual appeal and functionality of your web applications. With seamless integration and effortless customization, this slider empowers developers to create stunning vertical sliders with smooth animations.
 </p>
 
+#### click here to see : <a href="https://react-animated-slider-live-demo.vercel.app/">live demo</a>
+
+<hr/>
+
 #### install :
 
 ```
