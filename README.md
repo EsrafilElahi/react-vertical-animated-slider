@@ -22,6 +22,24 @@ npm i react-vertical-animated-slider
   <VerticalAnimatedCarousel data={someData} CardItem={YourCardItemComponent} />
 ```
 
+#### props :
+
+    data: unknown; ---> array of data
+    CardItem: React.ComponentType<{ card: unknown }>; ---> CardItem Component
+
+    containerClassName?: string; ---> className with string
+    containerStyle?: React.CSSProperties; style with CSSProperties like this : {{ height: '10rem' }}
+
+    carouselClassName?: string; ---> className with string
+    carouselStyle?: React.CSSProperties; ---> style with CSSProperties like this : {{ height: '10rem' }}
+
+    cardItemClassName?: string; ---> className with string
+    cardItemStyle?: React.CSSProperties; ---> style with CSSProperties like this : {{ height: '10rem' }}
+
+    behindCardSpace?: number; ---> space of card behind main card, default is 1.4
+    maxBehindCardVisibility?: number; ---> max number of card visiblity of cards, default is 2
+    startFromRight?: boolean; ---> startFromRight or left, default is right { startFromRight: true }
+
 #### how to customize it :
 
 ```
@@ -29,4 +47,5 @@ npm i react-vertical-animated-slider
 ```
 
 #### npm package link
+
 <a href="https://www.npmjs.com/package/react-vertical-animated-slider">go-to npm package link</a>
