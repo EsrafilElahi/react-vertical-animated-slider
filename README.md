@@ -23,3 +23,6 @@ npm i react-vertical-animated-slider
 ```
   <VerticalAnimatedCarousel data={someData} CardItem={YourCardItemComponent} containerStyle={{ height: '10rem', marginTop: '2rem' }} carouselStyle={{ height: '10rem' }} cardItemStyle={{ height: '10rem' }} />
 ```
+
+#### npm package link
+<a href="https://www.npmjs.com/package/react-vertical-animated-slider">go-to npm package link</a>
